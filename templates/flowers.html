@@ -1,0 +1,92 @@
+{% extends "base-site-fullscreen.html" %}
+
+{% block title %} Questionario {% endblock %}
+
+{% block content %}
+
+ <div class="row justify-content-center">
+        <div class="col-md-6">
+          
+            <div class="clearfix">
+
+               <div> <h2>Preditivo de Flores Iris</h2></div>
+                <div class="container-fluid">
+
+        <form action="" method="post">
+        <div class="fade-in">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                <strong>
+               
+                {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+
+                                <div><img  src="/static/assets/img/imagen/{{ message }}" width="207" height="170"></div>
+
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}   
+
+                </strong> 
+                    </div>
+                <div class="card-body">
+                  <div class="row">
+                    <!--nv-->
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="name">Sepal Length:</label>
+                        {{form.sepallength(size="4",placeholder="6.9")}}                       
+
+                      </div>
+                    </div>
+                        </br>
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="name">Sepal Width:</label>
+                            {{form.sepalwidth(size="4",placeholder="3.1")}}
+                        
+
+                      </div>
+                    </div>
+
+
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="name">Petala Length:</label>
+                            {{form.petalalength(size="4",placeholder="4.9")}}
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="name">Petala Width:</label>
+                        {{form.petalawidth(size="4",placeholder="1.5")}}
+
+                      </div>
+                    </div>
+
+                    </div>
+                    
+                     <div class="row">
+                        <div class="form-group">
+                         <button class="btn btn-sm btn-primary" type="submit"> Avançar >></button>
+                       </div>
+                    </div>
+                    </div>
+                </form>
+                </div>
+              </div>
+            </div>
+            </div>    
+
+        </div>
+        
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,193 @@
+{% extends "base-site-fullscreen.html" %}
+
+{% block title %} Questionario {% endblock %}
+
+{% block content %}
+
+ <div class="row justify-content-center">
+        <div class="col-md-6">
+          
+            <div class="clearfix">
+                <h1 class="float-left display-3 mr-4">Olá</h1>
+                <h4 class="pt-3">Agora Simmmmmm!</h4>
+                <p class="text-muted">
+                    Está é uma inface de teste então vamos fazer uns calculos para testar as chamadas de função. 
+                </p>
+               <div> <h2>Preditivo de Diabetes</h2></div>
+                <div class="container-fluid">
+                <div><img  src="/static/assets/img/imagen/logoDigitalHouse.png" width="237" height="190"></div>
+                </br>
+        <form action="" method="post">
+        <div class="fade-in">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-header"><strong>
+
+                
+                {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <!-- Do something with the message -->
+            {{ message }}
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}   
+                </strong> </div>
+                <div class="card-body">
+
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group col-sm-5">
+                        <label for="name">Nome:</label>
+
+                        {{ form.nome}}
+                        <!--<input id="txtNome" type="text" placeholder="Nome">-->
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--nv-->
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group col-sm-12">
+                        <label for="name">Qual sua idade?</label>
+                        {{ form.idade}}
+                        <!--<input id="idade" type="text" placeholder="Idade">-->
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="row">
+
+                    <div class="form-group col-sm-6">
+                        <label for="ccnumber">Peso</label>
+                       {{ form.peso(placeholder="60",size="2",class="form-control")}}
+                    </div>
+
+                   <div class="form-group col-sm-6">
+                        <label for="ccnumber">Altura</label>
+                       {{ form.altura(placeholder="1.70",size="2",class="form-control")}}
+                    </div>   
+
+                    </div>
+
+                  
+                  <div class="row">
+                    <div class="form-group col-sm-5">
+                      <label for="ccmonth">Sexo</label>
+                      <select class="form-control" id="sexo" name="sexo">
+                        <option value = "1">M</option>
+                        <option value = "2">F</option>                       
+                      </select>
+                    </div>
+                    <div class="form-group col-sm-7">
+                      <label for="ccyear">Estado Civil</label>
+                      <select class="form-control" id="civil" name="civil">
+                        <option value="1">Solteiro</option>
+                        <option value="2">Casado</option>
+                        <option value="3">união estável</option>
+                        <option value="4">viúvo ou divorciado</option>
+ 
+                      </select>
+                    </div>                    
+                  </div>
+                  <div class="row">
+                   <div class="form-group col-sm-8">
+                      <label for="ccyear">Escolaridade</label>
+                      <select class="form-control" id="escolaridade" name="escolaridade">
+                        <option value="1">fundamental incompleto</option>
+                        <option value="2">fundamental completo</option>
+                        <option value="3">ensino médio</option>
+                        <option value="4">curso superior</option>
+                        <option value="5">pós-graduação</option>
+ 
+                      </select>
+                    </div>
+                    </div>
+
+                   
+                    <div class="row">
+                        <div class="form-group col-sm-10">
+                      <label for="ccyear">Você consome refrigerante?</label>
+                      <select class="form-control" id="refrigeranteCheck" name="refrigeranteCheck">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                      </select>
+                    </div>
+                    </div> 
+                    <div class="row">
+                    <div class="form-group col-sm-10">
+                      <label for="ccyear">Se você respondeu "Sim" com que frequência por mês?</label>
+                       <select class="form-control" id="refrigerante" name="refrigerante">
+                        <option value="1">1 a 2 dias por semana</option>
+                        <option value="2">3 a 6 dias por semana</option>
+                        <option value="3">todos os dias</option>
+                        <option value="4">quase nunca</option>
+                      </select>
+                    </div>
+                    </div> 
+                    <div class="row"> 
+                    <div class="form-group col-sm-10">
+                      <label for="ccyear">Você sofre de Pressão alta?</label>
+                       <select class="form-control" id="hart" name="hart">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                      </select>
+                    </div>
+                    <div class="row"> 
+                    <div class="form-group col-sm-12">
+                    <label for="ccyear">Consome Hortaliças mais de 4 vezes por semana?</label>
+                       <select class="form-control" id="hortareg" name="hortareg">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                      </select>
+                      </div>
+                      </div>
+                    <div class="row"> 
+                    <div class="form-group col-sm-12">
+                    <label for="ccyear">Consome Frutas mais de 4 vezes por semana?</label>
+                       <select class="form-control" id="frutareg" name="frutareg">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                      </select>
+                      </div>
+                      </div>
+                     <div class="row"> 
+                    <div class="form-group col-sm-12">
+                    <label for="ccyear">Prática exercícios frequentemente?</label>
+                       <select class="form-control" id="exercicio" name="exercicio">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                      </select>
+                      </div>
+                      </div>
+                      <div class="row"> 
+                    <div class="form-group col-sm-12">
+                    <label for="ccyear">Você é fumante?</label>
+                       <select class="form-control" id="fumante" name="fumante">
+                        <option value="1">Sim</option>
+                        <option value="0">Não</option>
+                      </select>
+                      </div>
+                      </div>
+                      </div>
+                    <div class="row" align="center">
+                    <div>
+                         <button class="btn btn-sm btn-primary" type="submit"> Avançar >></button>
+                         </div>
+                    </div>
+                </form>
+                </div>
+              </div>
+            </div>
+            </div>    
+
+        </div>
+        
+    </div>
+
+{% endblock content %}
